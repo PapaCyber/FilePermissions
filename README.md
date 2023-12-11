@@ -41,22 +41,13 @@ I typed “chmod g-r project_m.txt” to remove read permissions from the resear
 
 <h2>Change file permissions on a hidden file  (examples highlighted in yellow!)</h2>
 The user “researcher2” and group “research_team” have incorrect permissions. 
-<br>They both have the write permissions and the research_team is not able to read the hidden file “.project_x.txt” <br>The permission now reads “-rw- - w - - - - -”            
-
-To change to  the correct permissions I typed “chmod u-w, g-w, g+r .project_x.txt” 
-<br>It now reads “-r- r - - - - -” Only the user and group can read this hidden file now.
-
+<br>They both have the write permissions and the research_team is not able to read the hidden file “.project_x.txt” <br>The permission now reads “-rw- - w - - - - -”  
 <img src="https://imgur.com/DuRIUBr.png" height="80%" width="80%"/>
 
-Change directory permissions  (examples highlighted in yellow!)
-The group “research_team” has access to the “drafts’” folder and only user “researcher2” should have permissions. 
-“ Drwx- - x - - -” means research team has access.
+To change to  the correct permissions I typed “chmod u-w, g-w, g+r .project_x.txt” 
+<br>It now reads “-r- r - - - - -” Only the user and group can read this hidden file now
 
-<img src="[https://imgur.com/DuRIUBr.png](https://imgur.com/FEGsjbv.png)" height="80%" width="80%"/>
-
-I typed” chmod g-x drafts” to remove access to drafts from the group “research_team” It now reads “drwx - - - - - -”
-
-<img src="https://imgur.com/FEGsjbv.png" height="80%" width="80%"/>
+<img src="https://imgur.com/uAtCW4R.png" height="80%" width="80%"/>
 
 <h2>Change directory permissions  (examples highlighted in yellow!)</h2>
 The group “research_team” has access to the “drafts’” folder and only user “researcher2” should have permissions. 
