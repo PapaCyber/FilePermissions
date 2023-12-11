@@ -5,17 +5,13 @@ In this project, I practiced the principle of least privilege by using bash comm
 <h2>Check file and directory details (examples highlighted in yellow!)</h2>
 To start my investigation, I used the “pwd” command to see my current directory. 
 
-I used the “ls” command to view the current folders and discovered “projects”
+<br>I used the “ls” command to view the current folders and discovered “projects”
 
 After that, I navigated to the “projects” folder by using the “cd projects” command.
 
 I typed the” ls -l” command to view the files and folder permissions that were in the “projects” folder.
 
-I discovered that the “projects” files were owned by “research_team” along with the “drafts” folder
-
-I typed in the “ls -la” command to view the permissions for hidden files and folders.
-
-I discovered a hidden file called “.project_x.txt” 
+I typed in the “ls -la” command to view the permissions for hidden files and folders, then I discovered a hidden file called “.project_x.txt” 
 
 <img src="https://imgur.com/ERqgvsL.png" height="80%" width="80%"/>
 
@@ -23,11 +19,11 @@ I discovered a hidden file called “.project_x.txt”
 The project_k.txt file was misconfigured for “other” 
 
 project_k.txt reads “=rw-rw-rw-” <br>
-“Other” should only have read permissions.
+“Other”  had permission to write and should only have read permissions.
 
 <img src="https://imgur.com/9Rbi2DX.png" height="80%" width="80%"/>
 
-“Other” was able to write files, so I typed ”chmod o-w project_k.txt” to remove write permissions from “other”. 
+I typed ”chmod o-w project_k.txt” to remove write permissions from “other”. 
 <br>It now reads” -rw-rw-r- -” and is configured to read only.
 
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
