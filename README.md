@@ -7,7 +7,7 @@ To start my investigation, I used the “pwd” command to see my current direct
 
 <br>I used the “ls” command to view the current folders and files discovered “projects”
 
-After that, I navigated to the “projects” folder by using the “cd projects” command. <br>The "cd" command is used when you wantto change directory. Add "cd" and then the "name" of the folder you want to navigate to.
+After that, I navigated to the “projects” folder by using the “cd projects” command. <br>The "cd" command is used when you want to change the directory. Add "cd" and then the "name" of the folder you want to navigate to.
 
 I typed the” ls -l” command to view the files and folder permissions of files and folders in the "projects folder. <br>
 
@@ -20,23 +20,35 @@ The project_k.txt file was misconfigured for “other”
 
 project_k.txt reads “-rw-rw-rw-” <br>
 
-Here is how to read these characters:
+Here is how to read these permissions:<Br>
+| Letter | Description |
+|----------|----------|
+| r = Read: for files & folders |, this is the ability to read the file contents; for directories, this is the ability to read all contents in the directory including both files and subdirectories |
+| w = Write: for files & folders | this is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
+| e = Execute: for files & folders | this is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
+
+| Owner Type | Description |
+|----------|----------|
+| USER | The owner of the file |
+| GROUP | A group that the owner is part of |
+| OTHER | All other users on the system
+
 
 | Character | Example | Meaning |
-|----------|----------|----------|
-| 1st   | **d**rwxrwxrwx   | **File Type** <br> **d** for directory <br> **-** for a regular file    |
-||||
-| 2nd    | d**r**wxrwxrwx   | **Read Permissions for the user** <br> **r** if the user has Read permissions <br> **-** if the user lacks Read permissions|
-| 3rd    | dr**w**xrwxrwx    | **Write Permissions for the user** <br> **w** if the user has Write permissions<br> **-** if the user lacks Write permissions  |
-| 4th    | drw**x**rwxrwx    | **Execute Permissions for the user** <br> **r** if the user has Execute permissions <br> **-** if the user lacks Execute permissions    |
-||||
-| 5th    | drwx**r**wxrwx    | **Read Permissions for the group** <br> **r** if the group has Read permissions <br> **-** if the group lacks Read permissions    |
-| 6th    | drwxr**w**xrwx    | **Write Permissions for the group** <br> **r** if the group has Write permissions <br> **-** if the group lacks Write permissions    |
-| 7th    | drwxrw**x**rwx    | **Execute Permissions for the group** <br> **r** if the group has Execute permissions <br> **-** if the group lacks Execute permissions    |
-||||
-| 8th    | drwxrwx**r**wx    | **Read Permissions for the other** <br> **r** if the other has Read permissions <br> **-** if the other lacks Read permissions    |
-| 8th    | drwxrwxr**w**x    | **Write Permissions for the other** <br> **r** if the other has Write permissions <br> **-** if the other Write permissions    |
-| 10th    | drwxrwxrw**x**    | **Execute Permissions for the other** <br> **r** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
+|:---|  :--- |  :--- |
+| 1st   | **d**rwxrwxrwx   | File Type <br> **d** for directory <br> **-** for a regular file    |
+||| **USER (2nd to 4th character)**|
+| 2nd    | d**r**wxrwxrwx   | Read Permissions for the user <br> **r** if the user has Read permissions <br> **-** if the user lacks Read permissions|
+| 3rd    | dr**w**xrwxrwx    | Write Permissions for the user <br> **w** if the user has Write permissions<br> **-** if the user lacks Write permissions  |
+| 4th    | drw**x**rwxrwx    | Execute Permissions for the user <br> **r** if the user has Execute permissions <br> **-** if the user lacks Execute permissions    |
+||| **GROUP (5th to 7th character)**|
+| 5th    | drwx**r**wxrwx    | Read Permissions for the group <br> **r** if the group has Read permissions <br> **-** if the group lacks Read permissions    |
+| 6th    | drwxr**w**xrwx    | Write Permissions for the group <br> **r** if the group has Write permissions <br> **-** if the group lacks Write permissions    |
+| 7th    | drwxrw**x**rwx    |Execute Permissions for the group <br> **r** if the group has Execute permissions <br> **-** if the group lacks Execute permissions    |
+|||**OTHER (8th to 10th character)**|
+| 8th    | drwxrwx**r**wx    | Read Permissions for the other <br> **r** if the other has Read permissions <br> **-** if the other lacks Read permissions    |
+| 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **r** if the other has Write permissions <br> **-** if the other Write permissions    |
+| 10th    | drwxrwxrw**x**    | Execute Permissions for the other <br> **r** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
 
 “Other”  had permission to write and should only have read permissions.
 
