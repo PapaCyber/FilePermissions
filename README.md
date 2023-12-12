@@ -56,7 +56,7 @@ Here is how to read these permissions:<Br>
 
 I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
 
-**The chmod command requires two arguments:** 
+**The chmod command is used to modify or change permissions and it requires two arguments:** 
 <Br>The first argument indicates how to change permissions. 
 <br>The second argument indicates the file or directory you want to change permissions for.
 
