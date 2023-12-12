@@ -106,6 +106,6 @@ I typed” chmod g-x drafts” to remove access to drafts from the group “rese
 
 
 <h2>Summary</h2>
-In conclusion, I identified regular files and hidden files that had misconfigured permissions and was able to change these permissions back to a secure configuration, therefore increasing this fictional company's security posture.
+In conclusion, I identified regular files and hidden files that had misconfigured permissions and was able to change these permissions back to a secure configuration, therefore increasing this fictional company's security posture. My key takeaway from this project is that reducing the amount of people who have access to sensitive data will decrease the likelihood of a data breach due to fewer insider threats. Configuring permissions to only people who need such access to data is crucial in keeping private data safe. 
 
 
