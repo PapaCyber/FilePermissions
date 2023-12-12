@@ -100,7 +100,7 @@ To change to  the correct permissions I typed “chmod u-w, g-w, g+r .project_x.
 
 <h2>Change directory permissions  (examples highlighted in yellow!)</h2>
 The “research_team” group has access to the “drafts’” folder when they shouldn't have.
-</br>“ Drwx--x---” means research_team has executable permissions, therefore they have access.
+</br>“ Drwx--x---” means research_team has executable permissions, therefore they have access. Remember the first character that has "d" means directory. If it is "-" it means file.
 
 <img src="https://imgur.com/FEGsjbv.png" height="80%" width="80%"/>
 
