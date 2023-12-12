@@ -5,11 +5,11 @@ In this project, I was given a task to improve a fictional company's security po
 <h2>Check file and directory details (examples highlighted in yellow!)</h2>
 To start my investigation, I used the “pwd” command to see my current directory.
 
-<br>I used the “ls” command to view the current folders and files discovered “projects”
+<br>I used the “ls” command to view the current folders and files, and I discovered the “projects” folder.
 
 After that, I navigated to the “projects” folder by using the “cd projects” command. <br>The "cd" command is used when you want to change the directory. Add "cd" and then add your argument, which is the "name" of the directory. 
 
-I typed the” ls -l” command to view the files and folder permissions of files and folders in the "projects" folder. <br>
+I typed the "ls -l” command to view the files and folder permissions of files and folders in the "projects" folder. <br>
 
 I typed in the “ls -la” command to view the permissions for hidden files and folders, then I discovered a hidden file called “.project_x.txt” Having "." in front of the file indicates that the file is hidden.
 
@@ -20,12 +20,12 @@ The project_k.txt file was misconfigured for “other”
 
 project_k.txt reads “-rw-rw-rw-” <br>
 
-Here is how to read these permissions:<Br>
+Here is how to read these 10 string permissions:<Br>
 | Letter | Description |
 |----------|----------|
-| r = Read: for files & folders |This is the ability to read the file contents; for directories, this is the ability to read all contents in the directory including both files and subdirectories |
-| w = Write: for files & folders | This is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
-| e = Execute: for files & folders | This is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
+|  **r**   | Read: This is the ability to read all contents in the directory including both files and subdirectories |
+|  **w**  | Write: This is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
+|  **e** | Execute: This is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
 
 | Owner Type | Description |
 |----------|----------|
@@ -50,20 +50,20 @@ Here is how to read these permissions:<Br>
 | 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **w** if the other has Write permissions <br> **-** if the other lacks Write permissions    |
 | 10th    | drwxrwxrw**x**    | Execute Permissions for the other <br> **x** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
 
-<br> From the tables “-rw-rw-rw-” means that User, Group, and Other have "rw-" permissions, this tells us that each group has read and write with no execute permissions because of the "-" symbol at the end. All other users on the system "Other" should not have write permissions.
+<br> From the tables “-rw-rw-rw-” means that User, Group, and Other have "rw-" permissions, this tells us that each group has read and write with no execute permissions because of the "-" symbol at the end means it lacks execute permissions. All other users on the system "Other" should not have write permissions.
 
 <img src="https://imgur.com/9Rbi2DX.png" height="80%" width="80%"/>
 
-I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
+| Command | Description | Argument 1 | Argument 2 |
+|:---|  :--- | :--- |:--- |
+| chmod | Used to modify or change permissions with 2 Arguments | Indicates what permission you want to change, "U" for User, "G" for Group, "O' for Other. <br> You use the "+" or "-" symbols to add or delete read "r", write "w", or execute "x"permissions | Indicates which file or folder you want to change permissions for |
 
-**The chmod command is used to modify or change permissions and it requires two arguments:** 
-<Br>The first argument indicates how to change permissions. 
-<br>The second argument indicates the file or directory you want to change permissions for.
+<br>I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
 
-<br> In the command "chmod **o-w** project_k.txt" 
+| Command | Argument 1 | Argument 2 |
+|:---|  :--- | :--- |
+| chmod | o-w (remove write permissions of "other") | project_k.txt (the file modified for the command) |
 
-<br>The first argument is "o-w", "o" means other, "-" means to remove, we use "+" for adding permissions. "w" means write which means I want to remove write permissions to the "other" group.
-<br> The second argument is the file I want to change the permissions for, which is "project_k.txt.
 
 <br>After I typed this command. It now reads” -rw-rw-r--”. Write permissions are now removed from "other".
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
@@ -73,7 +73,10 @@ project_m.txt file permission for the "research_team" group had read permissions
 <img src="https://imgur.com/OABjUW3.png" height="80%" width="80%"/>
 
 I typed “chmod g-r project_m.txt” to remove read permissions from the "research_team" group. 
-<br>"g-r" means remove "read" permissions from "group". Remember "g = group" and "-" means remove, and "r" means read. "project_m.txt" is the file I want to change permissions for.
+| Command | Argument 1 | Argument 2 |
+|:---|  :--- | :--- |
+| chmod | g-r(remove read permission for "group") | project_m.txt (the file modified for the command) |
+
 <br>It now reads “-rw------” so the "research_team" group has no access at all.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
@@ -87,8 +90,11 @@ Remember hidden files have "." in front of file names.
 <img src="https://imgur.com/DuRIUBr.png" height="80%" width="80%"/>
 
 To change to  the correct permissions I typed “chmod u-w, g-w, g+r .project_x.txt” 
-The first argument removes write permissions from the "users" and "group", and also adds read permission, hence the "+" sign in the command.
-<br>It now reads “-r-r-----” Only the user and group can read this hidden file now.
+| Command | Argument 1 | Argument 2 |
+|:---|  :--- | :--- |
+| chmod | u-w(remove write permissions for "user"),g-w(remove write permissions for "group"),g+r(add read permissions for "group") | project_x.txt (the file modified for the command) |
+
+<br>It now reads “-r--r-----” Only the user and group can read this hidden file now.
 
 <img src="https://imgur.com/uAtCW4R.png" height="80%" width="80%"/>
 
@@ -99,7 +105,10 @@ The “research_team” group has access to the “drafts’” folder when they
 <img src="https://imgur.com/FEGsjbv.png" height="80%" width="80%"/>
 
 I typed” chmod g-x drafts” to remove access to drafts from the group “research_team” 
-<br> "g" means group, "-" means to remove, "x" means execute permissions. 
+| Command | Argument 1 | Argument 2 |
+|:---|  :--- | :--- |
+| chmod | g-x(remove execute permission for group) | drafts (the folder modified for the command) |
+
 <br>It now reads “drwx------” research_team has no permissions or access to the folder now.
 <Br>Only the user has read, write, and execute permissions.
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
