@@ -47,7 +47,7 @@ Here is how to read these permissions:<Br>
 | 7th    | drwxrw**x**rwx    |Execute Permissions for the group <br> **x** if the group has Execute permissions <br> **-** if the group lacks Execute permissions    |
 |||**OTHER (8th to 10th character)**|
 | 8th    | drwxrwx**r**wx    | Read Permissions for the other <br> **r** if the other has Read permissions <br> **-** if the other lacks Read permissions    |
-| 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **w** if the other has Write permissions <br> **-** if the other Write permissions    |
+| 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **w** if the other has Write permissions <br> **-** if the other lacks Write permissions    |
 | 10th    | drwxrwxrw**x**    | Execute Permissions for the other <br> **x** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
 
 <br> From the tables “-rw-rw-rw-” means that User, Group, and Other have "rw-" permissions, this tells us that each group has read and write with no execute permissions because of the "-" symbol at the end. All other users on the system "Other" should not have write permissions.
