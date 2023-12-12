@@ -7,9 +7,9 @@ To start my investigation, I used the “pwd” command to see my current direct
 
 <br>I used the “ls” command to view the current folders and files discovered “projects”
 
-After that, I navigated to the “projects” folder by using the “cd projects” command. <br>The "cd" command is used when you want to change the directory. Add "cd" and then the "name" of the folder you want to navigate to.
+After that, I navigated to the “projects” folder by using the “cd projects” command. <br>The "cd" command is used when you want to change the directory. Add "cd" and then add your argument, which is the "name" of the directory. 
 
-I typed the” ls -l” command to view the files and folder permissions of files and folders in the "projects folder. <br>
+I typed the” ls -l” command to view the files and folder permissions of files and folders in the "projects" folder. <br>
 
 I typed in the “ls -la” command to view the permissions for hidden files and folders, then I discovered a hidden file called “.project_x.txt” Having "." in front of the file indicates that the file is hidden.
 
@@ -62,10 +62,10 @@ I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
 
 <br> In the command "chmod **o-w** project_k.txt" 
 
-<br>The first argument is "o-w", "o" means other, "-" means to remove like subtraction, we use "+" for additions. "w" means write which means I want to remove write permissions to the "other" group.
-<br> The second argument is the file I want to change the permissions for which is "project_k.txt.
+<br>The first argument is "o-w", "o" means other, "-" means to remove, we use "+" for adding permissions. "w" means write which means I want to remove write permissions to the "other" group.
+<br> The second argument is the file I want to change the permissions for the file "project_k.txt.
 
-<br>After I typed this command. It now reads” -rw-rw-r--” and is configured to read only.
+<br>After I typed this command. It now reads” -rw-rw-r--”. Write permissions are now removed from "other".
 
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
 
