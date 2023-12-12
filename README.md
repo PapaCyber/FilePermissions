@@ -23,9 +23,9 @@ project_k.txt reads “-rw-rw-rw-” <br>
 Here is how to read these permissions:<Br>
 | Letter | Description |
 |----------|----------|
-| r = Read: for files & folders |, this is the ability to read the file contents; for directories, this is the ability to read all contents in the directory including both files and subdirectories |
-| w = Write: for files & folders | this is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
-| e = Execute: for files & folders | this is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
+| r = Read: for files & folders |This is the ability to read the file contents; for directories, this is the ability to read all contents in the directory including both files and subdirectories |
+| w = Write: for files & folders | This is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
+| e = Execute: for files & folders | This is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
 
 | Owner Type | Description |
 |----------|----------|
@@ -50,12 +50,22 @@ Here is how to read these permissions:<Br>
 | 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **r** if the other has Write permissions <br> **-** if the other Write permissions    |
 | 10th    | drwxrwxrw**x**    | Execute Permissions for the other <br> **r** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
 
-“Other”  had permission to write and should only have read permissions.
+<br> From the tables “-rw-rw-rw-” means that User, Group, and Other have "rw-" permissions, this tells us that each group has read and write with no execute permissions because of the "-" symbol at the end. All other users on the system "Other" should not have write permissions.
 
 <img src="https://imgur.com/9Rbi2DX.png" height="80%" width="80%"/>
 
-I typed ”chmod o-w project_k.txt” to remove write permissions from “other”. 
-<br>It now reads” -rw-rw-r- -” and is configured to read only.
+I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
+
+**The chmod command requires two arguments:** 
+<Br>The first argument indicates how to change permissions. 
+<br>The second argument indicates the file or directory you want to change permissions for.
+
+<br> In the command "chmod **o-w** project_k.txt" 
+
+<br>The first argument is "o-w", "o" means other, "-" means to remove like subtraction, "w" means write which means I want to remove write permissions to the "other" group.
+<br> The second argument is the file I want to change the permissions for which is "project_k.txt.
+
+<br>It now reads” -rw-rw-r--” and is configured to read only.
 
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
 
@@ -64,29 +74,29 @@ project_m.txt file permission for the research_team group had read permissions.
 <img src="https://imgur.com/OABjUW3.png" height="80%" width="80%"/>
 
 I typed “chmod g-r project_m.txt” to remove read permissions from the research_team group. 
-<br>It now reads “-rw- - - - - -” so the group "research_team" has no access at all.
+<br>It now reads “-rw------” so the "research_team" group has no access at all.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
 
 <h2>Change file permissions on a hidden file  (examples highlighted in yellow!)</h2>
 The user “researcher2” and group “research_team” have incorrect permissions. 
-<br>They both have the write permissions and the research_team is not able to read the hidden file “.project_x.txt” 
-<br>The permission reads “-rw- - w - - - - -”  
+<br>They both have the write permissions and the "research_team" group is not able to read the hidden file “.project_x.txt” 
+<br>The permission reads “-rw--w-----”  
 <img src="https://imgur.com/DuRIUBr.png" height="80%" width="80%"/>
 
 To change to  the correct permissions I typed “chmod u-w, g-w, g+r .project_x.txt” 
-<br>It now reads “-r- r - - - - -” Only the user and group can read this hidden file now
+<br>It now reads “-r-r-----” Only the user and group can read this hidden file now
 
 <img src="https://imgur.com/uAtCW4R.png" height="80%" width="80%"/>
 
 <h2>Change directory permissions  (examples highlighted in yellow!)</h2>
-The group “research_team” has access to the “drafts’” folder when they shouldn't have.
-</br>“ Drwx- - x - - -” means research_team has executable permissions, therefore they have access.
+The “research_team” group has access to the “drafts’” folder when they shouldn't have.
+</br>“ Drwx--x---” means research_team has executable permissions, therefore they have access.
 
 <img src="https://imgur.com/FEGsjbv.png" height="80%" width="80%"/>
 
 I typed” chmod g-x drafts” to remove access to drafts from the group “research_team” 
-</br>It now reads “drwx - - - - - -” research_team has no permissions or access to the folder now.
+</br>It now reads “drwx------” research_team has no permissions or access to the folder now.
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
 
 
