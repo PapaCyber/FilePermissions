@@ -63,11 +63,9 @@ I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
 <br> In the command "chmod **o-w** project_k.txt" 
 
 <br>The first argument is "o-w", "o" means other, "-" means to remove, we use "+" for adding permissions. "w" means write which means I want to remove write permissions to the "other" group.
-
 <br> The second argument is the file I want to change the permissions for, which is "project_k.txt.
 
 <br>After I typed this command. It now reads” -rw-rw-r--”. Write permissions are now removed from "other".
-
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
 
 project_m.txt file permission for the "research_team" group had read permissions when they shouldn't have.
@@ -75,7 +73,7 @@ project_m.txt file permission for the "research_team" group had read permissions
 <img src="https://imgur.com/OABjUW3.png" height="80%" width="80%"/>
 
 I typed “chmod g-r project_m.txt” to remove read permissions from the "research_team" group. 
-The first argument is "g-r" which means remove "read" permissions from "group". Remember "g = group" and "-" means remove, and "r" means read.
+<br>"g-r" means remove "read" permissions from "group". Remember "g = group" and "-" means remove, and "r" means read. "project_m.txt" is the file I want to change permissions for.
 <br>It now reads “-rw------” so the "research_team" group has no access at all.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
@@ -103,7 +101,7 @@ The “research_team” group has access to the “drafts’” folder when they
 I typed” chmod g-x drafts” to remove access to drafts from the group “research_team” 
 <br> "g" means group, "-" means to remove, "x" means execute permissions. 
 <br>It now reads “drwx------” research_team has no permissions or access to the folder now.
-Only the user has read, write, and execute permissions.
+<Br>Only the user has read, write, and execute permissions.
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
 
 
