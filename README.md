@@ -63,7 +63,8 @@ I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
 <br> In the command "chmod **o-w** project_k.txt" 
 
 <br>The first argument is "o-w", "o" means other, "-" means to remove, we use "+" for adding permissions. "w" means write which means I want to remove write permissions to the "other" group.
-<br> The second argument is the file I want to change the permissions for the file "project_k.txt.
+
+<br> The second argument is the file I want to change the permissions for, which is "project_k.txt.
 
 <br>After I typed this command. It now reads” -rw-rw-r--”. Write permissions are now removed from "other".
 
@@ -74,7 +75,7 @@ project_m.txt file permission for the "research_team" group had read permissions
 <img src="https://imgur.com/OABjUW3.png" height="80%" width="80%"/>
 
 I typed “chmod g-r project_m.txt” to remove read permissions from the "research_team" group. 
-The first argument is "g-r" which means remove "read" permissions from "group". Remember "g = group" and "-" means subtract or remove, and "r" means read.
+The first argument is "g-r" which means remove "read" permissions from "group". Remember "g = group" and "-" means remove, and "r" means read.
 <br>It now reads “-rw------” so the "research_team" group has no access at all.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
