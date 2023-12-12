@@ -11,7 +11,7 @@ After that, I navigated to the “projects” folder by using the “cd projects
 
 I typed the” ls -l” command to view the files and folder permissions of files and folders in the "projects folder. <br>
 
-I typed in the “ls -la” command to view the permissions for hidden files and folders, then I discovered a hidden file called “.project_x.txt” 
+I typed in the “ls -la” command to view the permissions for hidden files and folders, then I discovered a hidden file called “.project_x.txt” Having "." in front of the file indicates that the file is hidden.
 
 <img src="https://imgur.com/ERqgvsL.png" height="80%" width="80%"/>
 
@@ -62,30 +62,34 @@ I typed "chmod o-w project_k.txt" to remove write permissions from “other”.
 
 <br> In the command "chmod **o-w** project_k.txt" 
 
-<br>The first argument is "o-w", "o" means other, "-" means to remove like subtraction, "w" means write which means I want to remove write permissions to the "other" group.
+<br>The first argument is "o-w", "o" means other, "-" means to remove like subtraction, we use "+" for additions. "w" means write which means I want to remove write permissions to the "other" group.
 <br> The second argument is the file I want to change the permissions for which is "project_k.txt.
 
-<br>It now reads” -rw-rw-r--” and is configured to read only.
+<br>After I typed this command. It now reads” -rw-rw-r--” and is configured to read only.
 
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
 
-project_m.txt file permission for the research_team group had read permissions. 
+project_m.txt file permission for the "research_team" group had read permissions when they shouldn't have.
 
 <img src="https://imgur.com/OABjUW3.png" height="80%" width="80%"/>
 
-I typed “chmod g-r project_m.txt” to remove read permissions from the research_team group. 
+I typed “chmod g-r project_m.txt” to remove read permissions from the "research_team" group. 
+The first argument is "g-r" which means remove "read" permissions from "group". Remember "g = group" and "-" means subtract or remove, and "r" means read.
 <br>It now reads “-rw------” so the "research_team" group has no access at all.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
 
 <h2>Change file permissions on a hidden file  (examples highlighted in yellow!)</h2>
-The user “researcher2” and group “research_team” have incorrect permissions. 
-<br>They both have the write permissions and the "research_team" group is not able to read the hidden file “.project_x.txt” 
-<br>The permission reads “-rw--w-----”  
+Remember hidden files have "." in front of file names.
+<br>The user “researcher2” and group “research_team” have incorrect permissions for the hidden file ".project_x.txt"
+<br>The current permission reads “-rw--w-----” This indicates that the user has read and write permissions while the group has write permissions.
+<br>Both the users and the group should only have read permissions and no write permissions. 
+<br>So now I need to remove the write permissions for both the user and the group while adding read permissions to the group. 
 <img src="https://imgur.com/DuRIUBr.png" height="80%" width="80%"/>
 
 To change to  the correct permissions I typed “chmod u-w, g-w, g+r .project_x.txt” 
-<br>It now reads “-r-r-----” Only the user and group can read this hidden file now
+The first argument removes write permissions from the "users" and "group", and also adds read permission, hence the "+" sign in the command.
+<br>It now reads “-r-r-----” Only the user and group can read this hidden file now.
 
 <img src="https://imgur.com/uAtCW4R.png" height="80%" width="80%"/>
 
@@ -96,7 +100,9 @@ The “research_team” group has access to the “drafts’” folder when they
 <img src="https://imgur.com/FEGsjbv.png" height="80%" width="80%"/>
 
 I typed” chmod g-x drafts” to remove access to drafts from the group “research_team” 
-</br>It now reads “drwx------” research_team has no permissions or access to the folder now.
+<br> "g" means group, "-" means to remove, "x" means execute permissions. 
+<br>It now reads “drwx------” research_team has no permissions or access to the folder now.
+Only the user has read, write, and execute permissions.
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
 
 
