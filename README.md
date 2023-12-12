@@ -1,6 +1,6 @@
 # Configuring Linux File Permissions
 <h2>Description</h2>
-In this project, I practiced the principle of least privilege by using bash commands on Linux to change file permissions. I investigated the directory to identify misconfigured permissions.  
+In this project, I was given a task to improve a fictional company's security posture. I practiced the principle of least privilege by using bash commands on Linux to configure file permissions to a secure state.
 
 <h2>Check file and directory details (examples highlighted in yellow!)</h2>
 To start my investigation, I used the “pwd” command to see my current directory.
