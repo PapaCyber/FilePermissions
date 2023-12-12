@@ -40,15 +40,15 @@ Here is how to read these permissions:<Br>
 ||| **USER (2nd to 4th character)**|
 | 2nd    | d**r**wxrwxrwx   | Read Permissions for the user <br> **r** if the user has Read permissions <br> **-** if the user lacks Read permissions|
 | 3rd    | dr**w**xrwxrwx    | Write Permissions for the user <br> **w** if the user has Write permissions<br> **-** if the user lacks Write permissions  |
-| 4th    | drw**x**rwxrwx    | Execute Permissions for the user <br> **r** if the user has Execute permissions <br> **-** if the user lacks Execute permissions    |
+| 4th    | drw**x**rwxrwx    | Execute Permissions for the user <br> **x** if the user has Execute permissions <br> **-** if the user lacks Execute permissions    |
 ||| **GROUP (5th to 7th character)**|
 | 5th    | drwx**r**wxrwx    | Read Permissions for the group <br> **r** if the group has Read permissions <br> **-** if the group lacks Read permissions    |
-| 6th    | drwxr**w**xrwx    | Write Permissions for the group <br> **r** if the group has Write permissions <br> **-** if the group lacks Write permissions    |
-| 7th    | drwxrw**x**rwx    |Execute Permissions for the group <br> **r** if the group has Execute permissions <br> **-** if the group lacks Execute permissions    |
+| 6th    | drwxr**w**xrwx    | Write Permissions for the group <br> **w** if the group has Write permissions <br> **-** if the group lacks Write permissions    |
+| 7th    | drwxrw**x**rwx    |Execute Permissions for the group <br> **x** if the group has Execute permissions <br> **-** if the group lacks Execute permissions    |
 |||**OTHER (8th to 10th character)**|
 | 8th    | drwxrwx**r**wx    | Read Permissions for the other <br> **r** if the other has Read permissions <br> **-** if the other lacks Read permissions    |
-| 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **r** if the other has Write permissions <br> **-** if the other Write permissions    |
-| 10th    | drwxrwxrw**x**    | Execute Permissions for the other <br> **r** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
+| 9th    | drwxrwxr**w**x    | Write Permissions for the other <br> **w** if the other has Write permissions <br> **-** if the other Write permissions    |
+| 10th    | drwxrwxrw**x**    | Execute Permissions for the other <br> **x** if the other has Execute permissions <br> **-** if the other lacks Execute permissions    |
 
 <br> From the tables “-rw-rw-rw-” means that User, Group, and Other have "rw-" permissions, this tells us that each group has read and write with no execute permissions because of the "-" symbol at the end. All other users on the system "Other" should not have write permissions.
 
