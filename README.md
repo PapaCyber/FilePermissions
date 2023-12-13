@@ -4,7 +4,7 @@ In this project, I was given a task to improve a fictional company's security po
 
 # How to Read 10 String Permissions
 <details>
-<summary>How to read these 10 string permissions:</summary>
+<summary>Click Here</summary>
 
   | Letter | Description |
 |----------|----------|
