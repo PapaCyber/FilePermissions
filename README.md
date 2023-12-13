@@ -1,8 +1,42 @@
 # Configuring Linux File Permissions
-<h2>Description</h2>
+### Description
 In this project, I was given a task to improve a fictional company's security posture. I practiced the principle of least privilege by using bash commands on Linux to configure file permissions to a secure state.
 
-# Check file and directory details (examples highlighted in yellow!)</h2>
+# How to Read 10 String Permissions
+<details>
+<summary>How to read these 10 string permissions:</summary>
+
+  | Letter | Description |
+|----------|----------|
+|  `r`   | `Read`: This is the ability to read all contents in the directory including both files and subdirectories |
+|  `w` | `Write`: This is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
+|  `e` | `Execute`: This is the ability to `execute` the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
+
+| Owner Type | Description |
+|----------|----------|
+| `USER` | The owner of the file |
+| `GROUP` | A group that the owner is part of |
+| `OTHER` | All other users on the system
+
+
+| Character | Example | Meaning |
+|:---|  :--- |  :--- |
+| 1st   | `d`rwxrwxrwx   | File Type <br> `d` for directory <br> `-` for a regular file    |
+||| **USER (2nd to 4th character)**|
+| 2nd    | d`r`wxrwxrwx   | `Read` Permissions for the `user` <br> `r` if the `user` has `Read` permissions <br> `-` if the `user` lacks `Read` permissions|
+| 3rd    | dr`w`xrwxrwx    | `Write` Permissions for the `user` <br> `w` if the `user` has `Write` permissions<br> `-` if the `user` lacks `Write` permissions  |
+| 4th    | drw`x`rwxrwx    | `Execute` Permissions for the `user` <br> `x` if the `user` has `Execute` permissions <br> `-` if the `user` lacks `Execute` permissions    |
+||| **GROUP (5th to 7th character)**|
+| 5th    | drwx`r`wxrwx    | `Read` Permissions for the `group` <br> `r`if the `group` has `Read` permissions <br> `-`if the `group` lacks `Read` permissions    |
+| 6th    | drwxr`w`xrwx    | `Write` Permissions for the `group` <br> `w` if the `group` has `Write` permissions <br> `-` if the `group` lacks `Write` permissions    |
+| 7th    | drwxrw`x`rwx    |`Execute` Permissions for the `group` <br> `x` if the `group` has `Execute` permissions <br> `-` if the `group` lacks `Execute` permissions    |
+|||**OTHER (8th to 10th character)**|
+| 8th    | drwxrwx`r`wx    | `Read` Permissions for the `other` <br> `r` if the `other` has `Read` permissions <br> `-` if the `other` lacks `Read` permissions    |
+| 9th    | drwxrwxr`w`x    | `Write` Permissions for the `other` <br> `w` if the `other` has `Write` permissions <br> `-` if the `other` lacks `Write` permissions    |
+| 10th    | drwxrwxrw`x`    | `Execute` Permissions for the `other` <br> `x` if the `other` has `Execute` permissions <br> `-` if the `other` lacks `Execute` permissions    |
+</details>
+
+# Check file and directory details (examples highlighted in yellow!)
 
 To start my investigation, I used the `pwd` command to see my current directory.
 
@@ -25,45 +59,15 @@ Having "`.`" in front of the file indicates that the file is hidden.
 # Change file permissions  (examples highlighted in yellow!)
 The `project_k.txt` file was misconfigured for “other” 
 
-`project_k.txt` reads `-rw-rw-rw-` <br>
+`project_k.txt` reads `-rw-rw-rw-` 
 
-Here is how to read these 10 string permissions:<Br>
-| Letter | Description |
-|----------|----------|
-|  `r`   | `Read`: This is the ability to read all contents in the directory including both files and subdirectories |
-|  `w` | `Write`: This is the ability to make modifications on the file contents; for directories, this is the ability to create new files in the directory |
-|  `e` | `Execute`: This is the ability to execute the file if it’s a program; for directories, this is the ability to enter the directory and access its files|
-
-| Owner Type | Description |
-|----------|----------|
-| `USER` | The owner of the file |
-| `GROUP` | A group that the owner is part of |
-| `OTHER` | All other users on the system
-
-
-| Character | Example | Meaning |
-|:---|  :--- |  :--- |
-| 1st   | `d`rwxrwxrwx   | File Type <br> `d` for directory <br> `-` for a regular file    |
-||| **USER (2nd to 4th character)**|
-| 2nd    | d`r`wxrwxrwx   | `Read` Permissions for the `user` <br> `r` if the `user` has `Read` permissions <br> `-` if the `user` lacks `Read` permissions|
-| 3rd    | dr`w`xrwxrwx    | `Write` Permissions for the `user` <br> `w` if the `user` has `Write` permissions<br> `-` if the `user` lacks `Write` permissions  |
-| 4th    | drw`x`rwxrwx    | `Execute` Permissions for the `user` <br> `x` if the `user` has `Execute` permissions <br> `-` if the `user` lacks `Execute` permissions    |
-||| **GROUP (5th to 7th character)**|
-| 5th    | drwx`r`wxrwx    | `Read` Permissions for the `group` <br> `r`if the `group` has Read permissions <br> `-`if the `group` lacks `Read` permissions    |
-| 6th    | drwxr`w`xrwx    | `Write` Permissions for the `group` <br> `w` if the `group` has Write permissions <br> `-` if the `group` lacks `Write` permissions    |
-| 7th    | drwxrw`x`rwx    |`Execute` Permissions for the `group` <br> `x` if the `group` has Execute permissions <br> `-` if the `group` lacks `Execute` permissions    |
-|||**OTHER (8th to 10th character)**|
-| 8th    | drwxrwx`r`wx    | `Read` Permissions for the `other` <br> `r` if the `other` has `Read` permissions <br> `-` if the `other` lacks `Read` permissions    |
-| 9th    | drwxrwxr`w`x    | `Write` Permissions for the `other` <br> `w` if the `other` has `Write` permissions <br> `-` if the `other` lacks `Write` permissions    |
-| 10th    | drwxrwxrw`x`    | `Execute` Permissions for the `other` <br> `x` if the `other` has `Execute` permissions <br> `-` if the `other` lacks `Execute` permissions    |
-
-<br> From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` permissions, this tells us that each group has `read` and `write` with no execute permissions because of the `-` symbol at the end means it lacks `execute` permissions. `Other` should not have `write` permissions.
+From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` permissions, this tells us that each group has `read` and `write` with no `execute` permissions because of the `-` symbol at the end means it lacks `execute` permissions. `Other` should not have `write` permissions.
 
 <img src="https://imgur.com/9Rbi2DX.png" height="80%" width="80%"/>
 
 | Command | Description | Argument 1 | Argument 2 |
 |:---|  :--- | :--- |:--- |
-| `chmod` | Used to modify or change permissions with 2 Arguments | Indicates what permission you want to change, `U` for `User`, `G` for `Group`, `O` for `Other`. <br> You use the `+` or `-` symbols to add or delete read `r`, write `w`, or execute `x`permissions | Indicates which file or folder you want to change permissions for |
+| `chmod` | Used to modify or change permissions with 2 Arguments | Indicates what permission you want to change, `U` for `User`, `G` for `Group`, `O` for `Other`. <br> You use the `+` or `-` symbols to add or delete read `r`, write `w`, or `execute` `x`permissions | Indicates which file or folder you want to change permissions for |
 
 <br>I typed `chmod` `o-w` `project_k.txt` to remove `write` permissions from `other`.
 
@@ -120,7 +124,7 @@ Remember the first character that has `d` means directory. If it is `-` it means
 I typed `chmod` `g-x` `drafts` to remove access to `drafts` from the `group` `research_team` 
 | Command | Argument 1 | Argument 2 |
 |:---|  :--- | :--- |
-| `chmod` | `g-x`(remove execute permission for `group`) | `drafts` (the folder modified for the command) |
+| `chmod` | `g-x`(remove `execute` permission for `group`) | `drafts` (the folder modified for the command) |
 
 It now reads `drwx------` `research_team` has no permissions or access to the folder now.
 
