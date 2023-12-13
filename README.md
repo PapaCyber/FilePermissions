@@ -83,6 +83,8 @@ From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` 
 
 `project_m.txt` file permission for the `research_team` `group` had `read` permissions when they shouldn't have.
 
+I highlight the `read` permission that needs to be changed: -rw-`r`-----
+
 <img src="https://imgur.com/OABjUW3.png" height="80%" width="80%"/>
 
 I typed `chmod` `g-r` `project_m.txt` to remove `read` permissions from the `research_team` `group`. 
@@ -90,7 +92,7 @@ I typed `chmod` `g-r` `project_m.txt` to remove `read` permissions from the `res
 |:---|  :--- | :--- |
 | `chmod` | `g-r`(remove `read` permission for `group`) | `project_m.txt` (the file modified for the command) |
 
-<br>The permissions that I changed are in a grey box: -rw-`-`---- The `research_team` `group` has no access anymore.
+<br>I highlighted the permission that was changed: -rw-`-`---- The `research_team` `group` has no access anymore.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
 
@@ -123,12 +125,14 @@ Remember the first character that has `d` means directory. If it is `-` it means
 
 <img src="https://imgur.com/FEGsjbv.png" height="80%" width="80%"/>
 
+drwx--`x`--- The `x` or execute permission for the `group` needs to be removed.
+
 I typed `chmod` `g-x` `drafts` to remove access to `drafts` from the `group` `research_team` 
 | Command | Argument 1 | Argument 2 |
 |:---|  :--- | :--- |
 | `chmod` | `g-x`(remove `execute` permission for `group`) | `drafts` (the folder modified for the command) |
 
-The `x` or execute has been removed, here is the highlighted changed: drwx--`-`--- `research_team` has no permissions or access to the folder now.
+The `x` or execute has been removed, here is the highlighted change: drwx--`-`--- `research_team` has no permissions or access to the folder now.
 
 Only the `user` has `read`, `write`, and `execute` permissions.
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
