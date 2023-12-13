@@ -61,7 +61,7 @@ The `project_k.txt` file was misconfigured for “other”
 
 `project_k.txt` reads `-rw-rw-rw-` 
 
-From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` permissions, this tells us that each group has `read` and `write` with no `execute` permissions because of the `-` symbol at the end means it lacks `execute` permissions. `Other` should not have `write` permissions.
+From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` permissions, this tells us that everyone has `read` and `write` with no `execute` permissions because of the `-` symbol at the end means it lacks `execute` permissions. `Other` should not have `write` permissions.
 
 <img src="https://imgur.com/9Rbi2DX.png" height="80%" width="80%"/>
 
