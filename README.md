@@ -67,7 +67,7 @@ From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` 
 
 | Command | Description | Argument 1 | Argument 2 |
 |:---|  :--- | :--- |:--- |
-| `chmod` | Used to modify or change permissions with 2 Arguments | Indicates what permission you want to change, `U` for `User`, `G` for `Group`, `O` for `Other`. <br> You use the `+` or `-` symbols to add or delete read `r`, write `w`, or `execute` `x`permissions | Indicates which file or folder you want to change permissions for |
+| `chmod` | Used to modify or change permissions with 2 Arguments | Indicates what permission you want to change, `U` for `User`, `G` for `Group`, `O` for `Other`. <br> You use the `+` or `-` symbols to add or delete read `r`, write `w`, or execute `x`permissions | Indicates which file or folder you want to change permissions for |
 
 <br>I typed `chmod` `o-w` `project_k.txt` to remove `write` permissions from `other`.
 
