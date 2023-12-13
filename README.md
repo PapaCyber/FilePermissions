@@ -63,6 +63,8 @@ The `project_k.txt` file was misconfigured for “other”
 
 From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` permissions, this tells us that everyone has `read` and `write` with no `execute` permissions because of the `-` symbol at the end means it lacks `execute` permissions. `Other` should not have `write` permissions.
 
+-rw-rw-r`w`- In this context, we need to remove the `w` here.
+
 <img src="https://imgur.com/9Rbi2DX.png" height="80%" width="80%"/>
 
 | Command | Description | Argument 1 | Argument 2 |
@@ -76,7 +78,7 @@ From the tables `-rw-rw-rw-` means that `User`, `Group`, and `Other` have `rw-` 
 | `chmod` | `o-w` (remove `write` permissions of `other`) | `project_k.txt` (the file modified for the command) |
 
 
-<br>After I typed this command. It now reads `-rw-rw-r--`. `Write` permissions are now removed from `other`.
+<br>After I typed this command. It now reads -rw-rw-r`-`-. `Write` permissions are now removed from `other`.
 <img src="https://imgur.com/uYSFSho.png" height="80%" width="80%"/>
 
 `project_m.txt` file permission for the `research_team` `group` had `read` permissions when they shouldn't have.
@@ -88,7 +90,7 @@ I typed `chmod` `g-r` `project_m.txt` to remove `read` permissions from the `res
 |:---|  :--- | :--- |
 | `chmod` | `g-r`(remove `read` permission for `group`) | `project_m.txt` (the file modified for the command) |
 
-<br>It now reads `-rw------` so the `research_team` `group` has no access at all.
+<br>The permissions that I changed are in a grey box: -rw-`-`---- The `research_team` `group` has no access anymore.
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
 
@@ -108,7 +110,7 @@ To change to  the correct permissions I typed `chmod` `u-w`, `g-w`, `g+r` `.proj
 |:---|  :--- | :--- |
 | `chmod` | `u-w`(remove `write` permissions for "user"),`g-w`(remove `write` permissions for `group`),`g+r`(add `read` permissions for `group`) | `project_x.txt` (the file modified for the command) |
 
-<br>It now reads `-r--r-----` Only the `user` and `group` can `read` this hidden file now.
+<br>The 3 permissions that were changed are highlighted: - r `-` - `r` `-` - - - - Only the `user` and `group` can `read` this hidden file now.
 
 <img src="https://imgur.com/uAtCW4R.png" height="80%" width="80%"/>
 
@@ -126,7 +128,7 @@ I typed `chmod` `g-x` `drafts` to remove access to `drafts` from the `group` `re
 |:---|  :--- | :--- |
 | `chmod` | `g-x`(remove `execute` permission for `group`) | `drafts` (the folder modified for the command) |
 
-It now reads `drwx------` `research_team` has no permissions or access to the folder now.
+The `x` or execute has been removed, here is the highlighted changed: drwx--`-`--- `research_team` has no permissions or access to the folder now.
 
 Only the `user` has `read`, `write`, and `execute` permissions.
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
