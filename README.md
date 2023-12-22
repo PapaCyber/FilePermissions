@@ -36,7 +36,7 @@ In this project, I was given a task to improve a fictional company's security po
 | 10th    | drwxrwxrw`x`    | `Execute` Permissions for the `other` <br> `x` if the `other` has `Execute` permissions <br> `-` if the `other` lacks `Execute` permissions    |
 </details>
 
-# Check file and directory details (examples highlighted in yellow!)
+# Check file and directory details 
 
 To start my investigation, I used the `pwd` command to see my current directory.
 
@@ -56,7 +56,7 @@ Having "`.`" in front of the file indicates that the file is hidden.
 
 <img src="https://imgur.com/ERqgvsL.png" height="80%" width="80%"/>
 
-# Change file permissions  (examples highlighted in yellow!)
+# Change file permissions  
 The `project_k.txt` file was misconfigured for “other” 
 
 `project_k.txt` reads `-rw-rw-rw-` 
@@ -96,7 +96,7 @@ I typed `chmod` `g-r` `project_m.txt` to remove `read` permissions from the `res
 
 <img src="https://imgur.com/erY1xu1.png" height="80%" width="80%"/>
 
-# Change file permissions on a hidden file  (examples highlighted in yellow!)
+# Change file permissions on a hidden file  
 Remember hidden files have "." in front of file names.
 The `user` `researcher2` and `group` `research_team` have incorrect permissions for the hidden file `.project_x.txt`
 
@@ -105,6 +105,7 @@ The current permission reads`-rw--w-----` This indicates that the `user` has `re
 Both the `user` and the `group` should only have `read` permissions and no `write` permissions. 
 
 So now I need to remove the `write` permissions for both the `user` and the `group` while adding `read` permissions to the `group`. 
+
 <img src="https://imgur.com/DuRIUBr.png" height="80%" width="80%"/>
 
 To change to  the correct permissions I typed `chmod` `u-w`, `g-w`, `g+r` `.project_x.txt` 
@@ -116,7 +117,7 @@ To change to  the correct permissions I typed `chmod` `u-w`, `g-w`, `g+r` `.proj
 
 <img src="https://imgur.com/uAtCW4R.png" height="80%" width="80%"/>
 
-# Change directory permissions  (examples highlighted in yellow!)
+# Change directory permissions  
 The `research_team` `group` has access to the `drafts` folder when they shouldn't have.
 
 `Drwx--x---` means `research`_team has `execute` permissions, therefore they have access. 
@@ -135,6 +136,7 @@ I typed `chmod` `g-x` `drafts` to remove access to `drafts` from the `group` `re
 The `x` or execute has been removed, here is the highlighted change: drwx--`-`--- `research_team` has no permissions or access to the folder now.
 
 Only the `user` has `read`, `write`, and `execute` permissions.
+
 <img src="https://imgur.com/7FE73do.png" height="80%" width="80%"/>
 
 
